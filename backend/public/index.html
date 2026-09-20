@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LegacyLock | Digital Will System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Digital estate planning</p>
+          <h1>
+            Prepare your digital will with clarity, privacy, and structure.
+          </h1>
+          <p class="hero-text">
+            LegacyLock helps you register, log in, and manage beneficiaries,
+            assets, executor details, witnesses, and final wishes from one
+            secure dashboard.
+          </p>
+          <div class="hero-points">
+            <span>Protected access</span>
+            <span>Structured will records</span>
+            <span>Fast review and updates</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="auth-tabs">
+            <button id="show-login" class="tab-button active" type="button">
+              Login
+            </button>
+            <button id="show-register" class="tab-button" type="button">
+              Create Account
+            </button>
+          </div>
+
+          <form id="login-form" class="auth-form">
+            <label>
+              <span>Email</span>
+              <input
+                type="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+            </label>
+            <label>
+              <span>Password</span>
+              <input
+                type="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+            </label>
+            <button class="primary-button" type="submit">Login</button>
+          </form>
+
+          <form id="register-form" class="auth-form hidden">
+            <label>
+              <span>Full name</span>
+              <input
+                type="text"
+                name="name"
+                placeholder="Aarav Kapoor"
+                required
+              />
+            </label>
+            <label>
+              <span>Email</span>
+              <input
+                type="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+            </label>
+            <label>
+              <span>Password</span>
+              <input
+                type="password"
+                name="password"
+                placeholder="At least 8 characters"
+                required
+              />
+            </label>
+            <button class="primary-button" type="submit">Create account</button>
+          </form>
+
+          <p id="auth-message" class="status-message" aria-live="polite"></p>
+        </div>
+      </header>
+
+      <main id="dashboard" class="dashboard hidden">
+        <section class="dashboard-topbar">
+          <div>
+            <p class="eyebrow">Your workspace</p>
+            <h2 id="welcome-heading">Your wills</h2>
+          </div>
+          <div class="topbar-actions">
+            <button id="refresh-wills" class="secondary-button" type="button">
+              Refresh
+            </button>
+            <button id="logout-button" class="secondary-button" type="button">
+              Logout
+            </button>
+          </div>
+        </section>
+
+        <section class="dashboard-grid">
+          <section class="panel panel-form">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Will editor</p>
+                <h3 id="editor-title">Create a will</h3>
+              </div>
+              <button id="reset-form" class="ghost-button hidden" type="button">
+                New will
+              </button>
+            </div>
+
+            <form id="will-form" class="will-form">
+              <input type="hidden" name="willId" />
+
+              <div class="field-grid">
+                <label>
+                  <span>Will title</span>
+                  <input
+                    type="text"
+                    name="title"
+                    placeholder="Primary Digital Will"
+                    required
+                  />
+                </label>
+                <label>
+                  <span>Status</span>
+                  <select name="status">
+                    <option value="draft">Draft</option>
+                    <option value="active">Active</option>
+                    <option value="archived">Archived</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Executor name</span>
+                  <input
+                    type="text"
+                    name="executorName"
+                    placeholder="Trusted person"
+                  />
+                </label>
+                <label>
+                  <span>Executor email</span>
+                  <input
+                    type="email"
+                    name="executorEmail"
+                    placeholder="executor@example.com"
+                  />
+                </label>
+                <label>
+                  <span>Executor phone</span>
+                  <input
+                    type="text"
+                    name="executorPhone"
+                    placeholder="+91-9876543210"
+                  />
+                </label>
+                <label>
+                  <span>Last reviewed</span>
+                  <input type="date" name="lastReviewedAt" />
+                </label>
+              </div>
+
+              <label>
+                <span>Beneficiaries</span>
+                <textarea
+                  name="beneficiaries"
+                  rows="4"
+                  placeholder="One per line: Name | Relation | Email | Allocation % | Notes"
+                ></textarea>
+              </label>
+
+              <label>
+                <span>Assets</span>
+                <textarea
+                  name="assets"
+                  rows="5"
+                  placeholder="One per line: Name | Category | Estimated Value | Location | Assigned To | Access Info"
+                ></textarea>
+              </label>
+
+              <label>
+                <span>Witnesses</span>
+                <textarea
+                  name="witnesses"
+                  rows="3"
+                  placeholder="One per line: Name | Email | pending/confirmed"
+                ></textarea>
+              </label>
+
+              <label>
+                <span>Guardianship notes</span>
+                <textarea
+                  name="guardianshipNotes"
+                  rows="3"
+                  placeholder="Notes for children, dependents, or pets"
+                ></textarea>
+              </label>
+
+              <label>
+                <span>Final wishes</span>
+                <textarea
+                  name="finalWishes"
+                  rows="4"
+                  placeholder="Funeral, document access, or special instructions"
+                ></textarea>
+              </label>
+
+              <div class="form-actions">
+                <button
+                  class="primary-button"
+                  type="submit"
+                  id="save-will-button"
+                >
+                  Save will
+                </button>
+                <p
+                  id="will-message"
+                  class="status-message"
+                  aria-live="polite"
+                ></p>
+              </div>
+            </form>
+          </section>
+
+          <section class="panel panel-list">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Saved records</p>
+                <h3>Will library</h3>
+              </div>
+            </div>
+
+            <div id="wills-empty" class="empty-state">
+              No wills saved yet. Create your first draft to get started.
+            </div>
+            <div id="wills-list" class="wills-list"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
