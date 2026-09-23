@@ -90,29 +90,36 @@ const Nominees = () => {
     <DashboardLayout>
       {/* Header */}
 
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h1 className="text-4xl font-bold">Nominees</h1>
+      <div className="mb-8">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          {/* Title + Description */}
+          <div className="min-w-0">
+            <h1 className="text-4xl font-bold">Nominees</h1>
 
-          <p className="text-gray-500 mt-2">
-            Manage the people who will receive your digital assets.
-          </p>
+            <p className="text-gray-500 mt-2 max-w-xl">
+              Manage the people who will receive your digital assets.
+            </p>
+          </div>
+
+          {/* Add Nominee */}
+          <button
+            onClick={() => setShowNomineeForm(true)}
+            className="
+              bg-black
+              text-white
+              px-6
+              py-3
+              rounded-xl
+              hover:bg-gray-900
+              transition
+              w-full
+              sm:w-auto
+              flex-shrink-0
+            "
+          >
+            + Add Nominee
+          </button>
         </div>
-
-        <button
-          onClick={() => setShowNomineeForm(true)}
-          className="
-                        bg-black
-                        text-white
-                        px-6
-                        py-3
-                        rounded-xl
-                        hover:bg-gray-900
-                        transition
-                    "
-        >
-          + Add Nominee
-        </button>
       </div>
 
       {/* Empty State */}
@@ -120,32 +127,33 @@ const Nominees = () => {
       {nominees.length === 0 ? (
         <div
           className="
-                    bg-white
-                    rounded-2xl
-                    border
-                    p-12
-                    text-center
-                "
+            bg-white
+            rounded-2xl
+            border
+            p-6
+            sm:p-12
+            text-center
+          "
         >
           <div
             className="
-                        w-16
-                        h-16
-                        mx-auto
-                        rounded-2xl
-                        bg-purple-100
-                        flex
-                        items-center
-                        justify-center
-                        mb-5
-                    "
+              w-16
+              h-16
+              mx-auto
+              rounded-2xl
+              bg-purple-100
+              flex
+              items-center
+              justify-center
+              mb-5
+            "
           >
             <Users size={30} className="text-purple-600" />
           </div>
 
           <h2 className="text-2xl font-semibold mb-2">No Nominees Found</h2>
 
-          <p className="text-gray-500">
+          <p className="text-gray-500 max-w-md mx-auto">
             Add a trusted person who can receive your digital assets.
           </p>
         </div>
@@ -154,11 +162,12 @@ const Nominees = () => {
 
         <div
           className="
-                    grid
-                    lg:grid-cols-3
-                    md:grid-cols-2
-                    gap-6
-                "
+            grid
+            grid-cols-1
+            md:grid-cols-2
+            lg:grid-cols-3
+            gap-6
+          "
         >
           {nominees.map((nominee) => (
             <NomineeCard

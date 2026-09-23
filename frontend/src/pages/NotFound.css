@@ -1,0 +1,217 @@
+/* ======================
+   404 Page
+======================= */
+
+.page_404 {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: #ffffff;
+
+  font-family: Arial, sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+/* ======================
+   Container
+======================= */
+
+.not_found_container {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+/* ======================
+   404 Animation
+======================= */
+
+.four_zero_four_bg {
+  height: 400px;
+
+  background-image: url(
+    "https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif"
+  );
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* 404 Number */
+
+.four_zero_four_bg h1 {
+  margin: 0;
+
+  font-size: 80px;
+  font-weight: 800;
+
+  color: #111827;
+}
+
+
+/* ======================
+   Content
+======================= */
+
+.content_box_404 {
+  margin-top: -50px;
+}
+
+
+.content_box_404 h2 {
+  margin: 0 0 10px;
+
+  font-size: 30px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+
+.content_box_404 p {
+  margin: 0 0 20px;
+
+  font-size: 16px;
+
+  color: #6b7280;
+}
+
+
+/* ======================
+   Button
+======================= */
+
+.link_404 {
+  display: inline-block;
+
+  border: none;
+  outline: none;
+
+  padding: 10px 20px;
+
+  margin: 20px 0;
+
+  background: #39ac31;
+  color: #ffffff;
+
+  border-radius: 6px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.link_404:hover {
+  background: #2e9428;
+
+  transform: translateY(-2px);
+}
+
+
+.link_404:active {
+  transform: translateY(0);
+}
+
+
+/* ======================
+   Mobile
+======================= */
+
+@media (max-width: 640px) {
+
+  .page_404 {
+    padding: 20px;
+  }
+
+
+  .not_found_container {
+    max-width: 100%;
+  }
+
+
+  .four_zero_four_bg {
+    height: 280px;
+  }
+
+
+  .four_zero_four_bg h1 {
+    font-size: 60px;
+  }
+
+
+  .content_box_404 {
+    margin-top: -25px;
+  }
+
+
+  .content_box_404 h2 {
+    font-size: 24px;
+  }
+
+
+  .content_box_404 p {
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    max-width: 320px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .link_404 {
+    padding: 10px 18px;
+
+    font-size: 15px;
+  }
+}
+
+
+/* ======================
+   Very Small Screens
+======================= */
+
+@media (max-width: 380px) {
+
+  .four_zero_four_bg {
+    height: 240px;
+  }
+
+
+  .four_zero_four_bg h1 {
+    font-size: 52px;
+  }
+
+
+  .content_box_404 {
+    margin-top: -15px;
+  }
+
+
+  .content_box_404 h2 {
+    font-size: 22px;
+  }
+}

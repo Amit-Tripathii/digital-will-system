@@ -80,54 +80,62 @@ const AssetVault = () => {
     <DashboardLayout>
       {/* Header */}
 
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <div className="flex items-center gap-4">
-            <h1 className="text-4xl font-bold">Asset Vault</h1>
+      <div className="mb-8">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          {/* Title + Badge */}
+          <div className="min-w-0">
+            <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
+              <h1 className="text-4xl sm:text-4xl font-bold">Asset Vault</h1>
 
-            <span
-              className="
-                flex
-                items-center
-                gap-2
-                px-3
-                py-1.5
-                rounded-full
-                bg-green-100
-                text-green-700
-                text-sm
-                font-medium
-            "
-            >
-              🔒 AES Encrypted
-            </span>
+              <span
+                className="
+                  flex
+                  items-center
+                  gap-2
+                  px-3
+                  py-1.5
+                  rounded-full
+                  bg-green-100
+                  text-green-700
+                  text-sm
+                  font-medium
+                  whitespace-nowrap
+                "
+              >
+                🔒 AES Encrypted
+              </span>
+            </div>
+
+            <p className="text-gray-500 mt-2">
+              Securely manage your digital assets.
+            </p>
           </div>
 
-          <p className="text-gray-500 mt-2">
-            Securely manage your digital assets.
-          </p>
+          {/* Add Asset */}
+          <button
+            onClick={() => setShowAddAsset(true)}
+            className="
+              bg-black
+              text-white
+              px-6
+              py-3
+              rounded-xl
+              hover:bg-gray-900
+              transition
+              w-full
+              sm:w-auto
+              flex-shrink-0
+            "
+          >
+            + Add Asset
+          </button>
         </div>
-
-        <button
-          onClick={() => setShowAddAsset(true)}
-          className="
-            bg-black
-            text-white
-            px-6
-            py-3
-            rounded-xl
-            hover:bg-gray-900
-            transition
-        "
-        >
-          + Add Asset
-        </button>
       </div>
 
       {/* Assets */}
 
       {assets.length === 0 ? (
-        <div className="bg-white rounded-2xl border p-12 text-center">
+        <div className="bg-white rounded-2xl border p-6 sm:p-12 text-center">
           <h2 className="text-2xl font-semibold mb-2">No Assets Found</h2>
 
           <p className="text-gray-500">
@@ -135,7 +143,7 @@ const AssetVault = () => {
           </p>
         </div>
       ) : (
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {assets.map((asset) => (
             <AssetCard
               key={asset._id}
