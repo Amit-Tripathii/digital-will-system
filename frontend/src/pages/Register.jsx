@@ -50,10 +50,12 @@ const Register = () => {
       <div className="w-full max-w-md">
         {/* Logo */}
 
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-extrabold">DIGIWILL</h1>
-
-          <p className="text-gray-500 mt-2">Secure Digital Legacy</p>
+        <div className="mb-6">
+          <img
+            src="/digiwill-logo.png"
+            alt="DigiWill - Secure Digital Legacy"
+            className="w-52 sm:w-60 mx-auto object-contain"
+          />
         </div>
 
         {/* Register Card */}
